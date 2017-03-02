@@ -1,0 +1,20 @@
+// recursive descent parser grammar to parse any grammar
+	grammar
+	: rule grammar
+	| EOF
+	;
+
+  	rule
+	: NONTERMINAL COLON rhs
+	;
+
+	rhs
+	: tokenRest rhs
+	| SEMICOLON
+	;
+	
+	tokenRest
+	: NONTERMINAL
+	| TERMINAL
+	| PIPE
+	;

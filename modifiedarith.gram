@@ -1,0 +1,29 @@
+ program
+    :  EOF
+    |  expr NL program
+    ;
+ expr 
+ 	: term exprRest
+ 	; 
+ exprRest 
+ 	: //empty
+ 	| ADD_OP term exprRest 
+ 	| SUB_OP term exprRest
+ 	;
+ term
+    : factor termRest
+    ;
+ termRest
+    :  //empty
+    :  MUL_OP factor termRest
+    |  DIV_OP factor termRest
+    ;
+ factor
+    :  simple EXP_OP factor
+    |  simple
+    ;
+ simple
+    : SIMPLE_OP simple
+    |  INTEGER
+    |  LPAREN expr RPAREN
+    ;
