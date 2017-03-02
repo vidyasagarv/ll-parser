@@ -2,9 +2,7 @@
 
 ### Overview
 
-Repository of work for CS571 Programming Languages at Binghamton University, Fall 2015.
-
-In this project, we built a Recursive Descent Parser to parse any grammar using Java 8.
+In this project, I have built a Recursive Descent Parser to parse any grammar using Java 8.
 
 
 ### Project Specification
